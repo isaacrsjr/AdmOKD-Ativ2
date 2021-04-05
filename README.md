@@ -2,8 +2,8 @@
 ## Item 1
 Para a realização da tarefa foi criado o arquivo *index.html* e *Dockerfile*.
 
-### index.html
-```
+index.html:
+```html
 <html>
     <head>
         <title>Atividade 2</title>
@@ -16,17 +16,19 @@ Para a realização da tarefa foi criado o arquivo *index.html* e *Dockerfile*.
 </html>
 ```
 
-### Dockerfile
-```
+Dockerfile:
+```dockerfile
 FROM nginx
 LABEL author="Isaac R. Sartori Jr. <isaac.sartori@universo.univates.br"
 WORKDIR /usr/share/nginx/html/
 EXPOSE 80
 COPY index.html /usr/share/nginx/html/index.html
 ```
-### Comandos Executados:
-```
+
+Comandos Executados:
+```bash
 docker build -t isaacrsjr/adm_okd_ativ2:v1 .
-docker run --rm -p 80:80 isaacrsjr/adm_okd_ativ2:v1
+docker run --rm -p 80:80 isaacrsjr/adm_okd_ativ2:v1 #somente para testar
 docker push isaacrsjr/adm_okd_ativ2:v1
 ```
+
