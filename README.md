@@ -74,4 +74,14 @@ docker push isaacrsjr/adm_okd_ativ2:v2
 
 Para a realização dessa tarefa, foi configurado no [docker hub](https://hub.docker.com/repository/docker/isaacrsjr/adm_okd_ativ2/builds) a regra que utiliza a regex ```/^(v\d+)$/``` que gera um build com a tab v<numero>, baseada na tag do github.
 
+Para a geração do novo *build* basta fazer as alterações e, em seguinda, digitar:
+
+```bash
+git add .
+git commit -m '<mensagem>'
+git push
+git tag v<número inteiro>         # exemplo: git tab v3
+git push origin v<número inteiro> # exemplo: git push origin v3
+```
+
 O *commit* no github, referente a essa atividade é [esse aqui](https://github.com/isaacrsjr/AdmOKD-Ativ2/tree/v3).
