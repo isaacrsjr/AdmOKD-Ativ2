@@ -5,10 +5,12 @@ O resultado final dessa atividade pode ser acessado:
 - no [repositório docker](https://hub.docker.com/repository/docker/isaacrsjr/adm_okd_ativ2)
 
 ## Subatividade 1
+
 Para a realização da tarefa foi criado o arquivo *index.html* e *Dockerfile*.
 O *commit* no github, referente a essa atividade é [esse aqui](https://github.com/isaacrsjr/AdmOKD-Ativ2/tree/v1).
 
 index.html:
+
 ```html
 <html>
     <head>
@@ -39,6 +41,7 @@ docker push isaacrsjr/adm_okd_ativ2:v1
 ```
 
 ## Subatividade 2
+
 Para a realização dessa tarefa, foram feitas as seguintes atividades:
 1. baixado o [app python](https://drive.google.com/file/d/1StZsLvNB7-9nkvI2cHlmRzZv1d2-oPlk)
 2. removido o arquivo *index.html*
@@ -47,6 +50,7 @@ Para a realização dessa tarefa, foram feitas as seguintes atividades:
 O *commit* no github, referente a essa atividade é [esse aqui](https://github.com/isaacrsjr/AdmOKD-Ativ2/tree/v2).
 
 Dockerfile:
+
 ```dockerfile
 FROM ubuntu
 LABEL author="Isaac R. Sartori Jr. <isaac.sartori@universo.univates.br"
@@ -59,8 +63,15 @@ CMD ["python3", "app.py"]
 ```
 
 Comandos Executados:
+
 ```bash
 docker build -t isaacrsjr/adm_okd_ativ2:v2 .
 docker run --rm -p 80:5000 isaacrsjr/adm_okd_ativ2:v2 #somente para testar
 docker push isaacrsjr/adm_okd_ativ2:v2
 ```
+
+## Subatividade 3
+
+Para a realização dessa tarefa, foi configurado no [docker hub](https://hub.docker.com/repository/docker/isaacrsjr/adm_okd_ativ2/builds) a regra que utiliza a regex ```/^(v\d+)$/``` que gera um build com a tab v<numero>, baseada na tag do github.
+
+O *commit* no github, referente a essa atividade é [esse aqui](https://github.com/isaacrsjr/AdmOKD-Ativ2/tree/v3).
