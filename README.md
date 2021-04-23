@@ -1,10 +1,13 @@
 # AdmOKD-Ativ2
 
 O resultado final dessa atividade pode ser acessado:
+
 - no [github](https://github.com/isaacrsjr/AdmOKD-Ativ2)
 - no [repositório docker](https://hub.docker.com/repository/docker/isaacrsjr/adm_okd_ativ2)
 
-## Subatividade 1
+## Subatividades da Semana 2
+
+### Subatividade 1
 
 Para a realização da tarefa foi criado o arquivo *index.html* e *Dockerfile*.
 O *commit* no github, referente a essa atividade é [esse aqui](https://github.com/isaacrsjr/AdmOKD-Ativ2/tree/v1).
@@ -25,6 +28,7 @@ index.html:
 ```
 
 Dockerfile:
+
 ```dockerfile
 FROM nginx
 LABEL author="Isaac R. Sartori Jr. <isaac.sartori@universo.univates.br"
@@ -34,15 +38,17 @@ COPY index.html /usr/share/nginx/html/index.html
 ```
 
 Comandos Executados:
+
 ```bash
 docker build -t isaacrsjr/adm_okd_ativ2:v1 .
 docker run --rm -p 80:80 isaacrsjr/adm_okd_ativ2:v1 #somente para testar
 docker push isaacrsjr/adm_okd_ativ2:v1
 ```
 
-## Subatividade 2
+### Subatividade 2
 
 Para a realização dessa tarefa, foram feitas as seguintes atividades:
+
 1. baixado o [app python](https://drive.google.com/file/d/1StZsLvNB7-9nkvI2cHlmRzZv1d2-oPlk)
 2. removido o arquivo *index.html*
 3. alterado o arquivo *Dockerfile*
@@ -70,9 +76,9 @@ docker run --rm -p 80:5000 isaacrsjr/adm_okd_ativ2:v2 #somente para testar
 docker push isaacrsjr/adm_okd_ativ2:v2
 ```
 
-## Subatividade 3
+### Subatividade 3
 
-Para a realização dessa tarefa, foi configurado no [docker hub](https://hub.docker.com/repository/docker/isaacrsjr/adm_okd_ativ2/builds) a regra que utiliza a regex ```/^(v\d+)$/``` que gera um build com a tab v<numero>, baseada na tag do github.
+Para a realização dessa tarefa, foi configurado no [docker hub](https://hub.docker.com/repository/docker/isaacrsjr/adm_okd_ativ2/builds) a regra que utiliza a regex ```/^(v\d+)$/``` que gera um build com a tab v\<numero>, baseada na tag do github.
 
 Para a geração do novo *build* basta fazer as alterações e, em seguinda, digitar:
 
@@ -85,3 +91,17 @@ git push origin v<número inteiro> # exemplo: git push origin v3
 ```
 
 O *commit* no github, referente a essa atividade é [esse aqui](https://github.com/isaacrsjr/AdmOKD-Ativ2/tree/v3).
+
+## Alteração para o Trabalho Final
+
+Para a realização dessa tarefa, foi configurado no [docker hub](https://hub.docker.com/repository/docker/isaacrsjr/adm_okd_ativ2/builds) a regra que utiliza a regex ```/^(.*)$/``` que gera um build com a tag igual da tag do github.
+
+Para a geração do novo *build* basta fazer as alterações e, em seguinda, digitar:
+
+```bash
+git add .
+git commit -m '<mensagem>'
+git push
+git tag <nome da tag>         # exemplo: git tab blue
+git push origin <nome da tag> # exemplo: git push origin blue
+```
